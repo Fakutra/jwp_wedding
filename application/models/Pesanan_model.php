@@ -40,7 +40,18 @@ class Pesanan_model extends CI_Model
         $query = $this->db->get();
         return $query;
     }
-
+    public function cek_data_pesanan($id, $email, $wedding_date)
+    {
+        $this->db->SELECT('*');
+        $this->db->from('tb_order tbo');
+        $this->db->join('tb_catalogues tbc', 'tbc.catalogue_id = tbo.catalogue_id');
+        $this->db->where('tbo.catalogue_id', $id);
+        $this->db->where('tbo.email', $email);
+        $this->db->where('tbo.wedding_date', $wedding_date);
+        $this->db->order_by("tbo.update_at", "DESC");
+        $query = $this->db->get();
+        return $query;
+    }
     public function get_pesanan_by_id($id)
     {
         $this->db->SELECT('*');
@@ -68,4 +79,5 @@ class Pesanan_model extends CI_Model
         $this->db->where('order_id', $id);
         return $this->db->delete('tb_order');
     }
+    
 }

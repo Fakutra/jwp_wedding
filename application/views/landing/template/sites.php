@@ -57,7 +57,12 @@
                         <a href="<?= base_url('Login') ?>" class="nav-item nav-link">Login</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        <form class="d-flex" action="<?= base_url('Search/search') ?>" method="POST">
+                            <input class="form-control me-2" type="text" name="email" placeholder="Search by Email" aria-label="Search">
+                            <button type="submit" class="btn btn-sm p-0">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -85,7 +90,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="kontak.php">Contact Us</a>
+                    <a class="btn btn-link" href="Kontak">Contact Us</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary mb-4">Business Hours</h4> 
@@ -95,14 +100,6 @@
                     <h6 class="text-light">09:00 am - 12:00 pm</h6>
                     <p class="mb-1">Sunday</p>
                     <h6 class="text-light">Closed</h6>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative w-100">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
                 </div>
             </div>
         </div>
